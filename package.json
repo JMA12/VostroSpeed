@@ -1,0 +1,13 @@
+{
+  "name": "VOSTRO_SPEED_TESTER",
+  "version": "1.0.0",
+  "description": "Speed Tester server",
+  "main": "index.js",
+  "author": "Jan Mykiel Agar",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "start:web": "./start_web.sh",
+    "prestartWeb": "chmod +x ./start_web.sh"
+  }
+}

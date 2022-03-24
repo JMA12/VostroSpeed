@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Speed Tester</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #3e3e3e !important;
+    }
+
+    .main_container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .tester_container {
+        padding: 1.25rem;
+        padding-top: 10rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .tester_display {
+        grid-column: span 2 / span 2;
+        grid-column-start: 2;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+    .tester_title {
+        font-size: 2rem;
+        line-height: 2;
+        text-align: center;
+    }
+
+    .tester_reading {
+        padding-top: 5rem;
+        text-align: center;
+        font-size: 5rem;
+        line-height: 1rem;
+    }
+
+    .button_container {
+        padding-top: 5rem;
+        text-align: center;
+    }
+
+    .button_speed_test {
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+    }
+
+    .button_speed_test:hover {
+        cursor: pointer;
+    }
+
+    .speed_reading {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 5rem;
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+
+    .speed_reading_download {
+        text-align: center;
+    }
+
+    .speed_reading_upload {
+        text-align: center;
+    }
+
+    .speed_reading_label {
+        padding-top: 12px;
+        opacity: 0.8;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-style: italic;
+    }
+</style>
+
+<body>
+    <div class="main_container">
+        <div class="tester_container">
+            <div class="tester_display">
+                <div class="tester_title">SPEED TESTER</div>
+                <div class="tester_reading">00</div>
+                <div class="button_container">
+                    <button class="button_speed_test" onclick="testSpeed()">Run Speed Test</button>
+                </div>
+                <div class="speed_reading">
+                    <div class="speed_reading_download">
+                        - -
+                        <div class="speed_reading_label"> Download (Mbps) </div>
+                    </div>
+                    <div class="speed_reading_upload">
+                        - -
+                        <div class="speed_reading_label"> Upload (Mbps) </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function testSpeed() {
+        var httpRequest
+        // Old compatibility code, no longer needed.
+        if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+            httpRequest = new XMLHttpRequest()
+        } else if (window.ActiveXObject) { // IE 6 and older
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+        console.log("Hey! You clicked me!\nI will test your internet speed.")
+    }
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+</html>
